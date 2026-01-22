@@ -10,7 +10,7 @@ const HeroText = ({ start = false }) => {
   };
 
   return (
-    <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
+    <div className="z-10  text-center md:mt-25 md:text-left rounded-3xl bg-clip-text">
       {/* Desktop View */}
       <div className="flex-col hidden md:flex c-space gap-2">
         <motion.h1
@@ -40,7 +40,7 @@ const HeroText = ({ start = false }) => {
             animate={start ? "visible" : "hidden"}
             transition={{ delay: 1.2 }}
           >
-            <FlipWords words={words} className="font-black text-black text-8xl" />
+            <FlipWords words={words} className="font-sans font-black text-black text-8xl [transform:translateZ(0)] [-webkit-font-smoothing:antialiased]" />
           </motion.div>
 
           <motion.p

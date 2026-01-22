@@ -37,7 +37,7 @@ const Avatar = ({ isMobile }) => {
   return (
     <group
       ref={group}
-      position={isMobile ? [0, -1.5, 0] : [2.5, -4, 0]}
+      position={isMobile ? [0, -1.5, 0] : [2.65, -4, 0]}
       scale={isMobile ? 1.4 : 4}
     >
       <hemisphereLight intensity={2} groundColor="#000000" />
