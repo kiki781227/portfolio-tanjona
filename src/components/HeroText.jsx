@@ -40,7 +40,7 @@ const HeroText = ({ start = false }) => {
             animate={start ? "visible" : "hidden"}
             transition={{ delay: 1.2 }}
           >
-            <FlipWords words={words} className="font-sans font-black text-black text-8xl [transform:translateZ(0)] [-webkit-font-smoothing:antialiased]" />
+            <FlipWords words={words} className="font-black text-black text-8xl [transform:translateZ(0)] [-webkit-font-smoothing:antialiased]" />
           </motion.div>
 
           <motion.p
