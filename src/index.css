@@ -175,17 +175,6 @@ a, button, [role="button"], input, textarea, select, label, summary {
 }
 
 @layer utilities {
-  
-  .memphis-card {
-    position: relative;
-    border: 3px solid #000001;
-    box-shadow: 12px 12px 0 #000001;
-    background: #ffffff;
-    color: #000001;
-  }
-
-
-
   /* Label “ink” */
   .memphis-label {
     display: inline-block;
@@ -194,15 +183,20 @@ a, button, [role="button"], input, textarea, select, label, summary {
     color: #000001;
   }
 
-  /* Input papier */
+  /* Input papier (SANS border => pas de grossissement) */
   .memphis-input {
     width: 100%;
-    border: 3px solid #000001;
+    border: 0;                 /* ✅ important */
     border-radius: 14px;
     background: #ffffff;
     color: #000001;
+
+    /* ⚠️ ajuste ces paddings pour matcher ton field-input */
     padding: 12px 14px;
-    box-shadow: 6px 6px 0 #000001;
+
+    /* 1er shadow = bordure visuelle, 2e = shadow Memphis */
+    box-shadow: 0 0 0 3px #000001, 6px 6px 0 #000001;
+
     outline: none;
   }
 
@@ -212,14 +206,16 @@ a, button, [role="button"], input, textarea, select, label, summary {
 
   .memphis-input:focus {
     transform: translate(2px, 2px);
-    box-shadow: 4px 4px 0 #000001;
+    box-shadow: 0 0 0 3px #000001, 4px 4px 0 #000001;
   }
 
-  /* Bouton Memphis */
+  /* Bouton Memphis (SANS border => pas de grossissement) */
   .memphis-btn {
-    border: 3px solid #000001;
+    border: 0;                 /* ✅ important */
     border-radius: 14px;
-    box-shadow: 8px 8px 0 #000001;
+
+    box-shadow: 0 0 0 3px #000001, 8px 8px 0 #000001;
+
     background: #ffffff;
     color: #000001;
     font-weight: 800;
@@ -229,9 +225,10 @@ a, button, [role="button"], input, textarea, select, label, summary {
 
   .memphis-btn:active {
     transform: translate(6px, 6px);
-    box-shadow: 2px 2px 0 #000001;
+    box-shadow: 0 0 0 3px #000001, 2px 2px 0 #000001;
   }
 }
+
 
 @layer utilities {
   .memphis-transition {
