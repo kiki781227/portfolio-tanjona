@@ -20,8 +20,8 @@ const Navbar = () => {
     <>
       <FloatingDock
         items={items}
-        desktopClassName="fixed bottom-15 left-1/2 -translate-x-1/2 z-50"
-        mobileClassName="fixed bottom-15 right-6 z-50"
+        desktopClassName="fixed bottom-12 left-1/2 -translate-x-1/2 z-50"
+        mobileClassName="fixed bottom-12 right-6 z-50"
       />
     </>
   );
