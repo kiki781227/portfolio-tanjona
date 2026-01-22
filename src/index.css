@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #030412;
+  --color-midnight: #06091f;
+  --color-navy: #161a31;
+  --color-indigo: #1f1e39;
+  --color-storm: #282b4b;
+  --color-aqua: #33c2cc;
+  --color-mint: #57db96;
+  --color-royal: #5c33cc;
+  --color-lavender: #7a57db;
+  --color-fuchsia: #ca2f8c;
+  --color-orange: #cc6033;
+  --color-sand: #d6995c;
+  --color-coral: #ea4884;
+  --animate-orbit: orbit 50s linear infinite;
+  @keyframes orbit {
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-marquee-vertical: marquee-vertical 50s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+:root {
+ 
+  --pencil-cursor: url("/assets/pencil.png") 5 4, auto;
+}
+
+html { scroll-behavior: smooth;  cursor: var(--pencil-cursor);}
+
+body {
+  background: #000001;
+  font-family: "Funnel Display", sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+   cursor: var(--pencil-cursor);
+}
+
+a, button, [role="button"], input, textarea, select, label, summary {
+  cursor: var(--pencil-cursor) !important;
+}
+
+.c-space {
+  @apply sm:px-10 px-5 lg:px-15;
+}
+
+.hover-animation {
+  @apply hover:-translate-y-1 duration-200;
+}
+
+.section-spacing {
+  @apply min-h-screen pt-20 pb-20 md:pt-20 md:pb-20;
+}
+
+.text-heading {
+  @apply font-bold text-2xl sm:text-3xl md:text-4xl;
+}
+
+.headtext {
+  @apply mt-2 mb-2 text-base sm:text-lg md:text-xl;
+}
+
+.subtext {
+  @apply text-neutral-400 text-[12px] sm:text-sm md:text-base text-pretty leading-relaxed;
+}
+
+
+
+/* Navigation */
+.nav-ul {
+  @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
+}
+
+.nav-li {
+  @apply text-neutral-400 hover:text-white max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+}
+
+.nav-link {
+  @apply text-lg md:text-base hover:text-white transition-colors;
+}
+/* Button Components */
+.btn {
+  @apply relative px-1 py-4 text-sm text-center rounded-full font-extralight bg-primary w-[12rem] cursor-pointer overflow-hidden;
+}
+
+/* About Section */
+.grid-1 {
+  @apply row-span-2 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-2 {
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-3 {
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-4 {
+  @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-5 {
+  @apply row-span-1 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+
+.grid-default-color {
+  @apply p-6 bg-transparent rounded-2xl;
+}
+
+.grid-special-color {
+  @apply p-6 bg-white rounded-2xl;
+}
+.grid-black-color {
+  @apply p-6 bg-linear-to-tr from-[##121212] via-[#242424] to-[#3A3A3A] rounded-2xl;
+}
+
+/* Contact Section*/
+.field-label {
+  @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+}
+
+.field-input {
+  @apply w-full min-h-10 rounded-md px-3 py-2 text-sm bg-white/10 transition duration-200 placeholder-neutral-500 border border-white/10 mt-2;
+}
+
+.field-input-focus {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20;
+}
+
+@layer utilities {
+  .memphis-outline::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border: 3px solid #000001;
+    border-radius: inherit;
+    transform: translate(6px, 6px);
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .memphis-active {
+    background: #000000 !important;
+    border: 10solid #000 !important;
+    box-shadow: -2px 4px 0 #ffffff !important;
+  }
+
+}
+
+@layer utilities {
+  
+  .memphis-card {
+    position: relative;
+    border: 3px solid #000001;
+    box-shadow: 12px 12px 0 #000001;
+    background: #ffffff;
+    color: #000001;
+  }
+
+
+
+  /* Label “ink” */
+  .memphis-label {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #000001;
+  }
+
+  /* Input papier */
+  .memphis-input {
+    width: 100%;
+    border: 3px solid #000001;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #000001;
+    padding: 12px 14px;
+    box-shadow: 6px 6px 0 #000001;
+    outline: none;
+  }
+
+  .memphis-input::placeholder {
+    color: rgba(0, 0, 1, 0.45);
+  }
+
+  .memphis-input:focus {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0 #000001;
+  }
+
+  /* Bouton Memphis */
+  .memphis-btn {
+    border: 3px solid #000001;
+    border-radius: 14px;
+    box-shadow: 8px 8px 0 #000001;
+    background: #ffffff;
+    color: #000001;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+  }
+
+  .memphis-btn:active {
+    transform: translate(6px, 6px);
+    box-shadow: 2px 2px 0 #000001;
+  }
+}
+
+@layer utilities {
+  .memphis-transition {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+}
+
+@layer utilities {
+  .memphis-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    border: 3px solid #000001;
+    box-shadow: 12px 12px 0 #000001;
+    background: #ffffff;
+  }
+
+  .memphis-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border: 3px solid #000001;
+    border-radius: inherit;
+    transform: translate(6px, 6px);
+    pointer-events: none;
+  }
+}
+
+
+
+
+
