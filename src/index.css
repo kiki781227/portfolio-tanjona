@@ -227,7 +227,7 @@ a, button, [role="button"], input, textarea, select, label, summary {
   }
 
   .memphis-btn:active {
-    transform: translate(6px, 6px);
+    transform: translate(1px, 1px);
     box-shadow: 0 0 0 3px #000001, 2px 2px 0 #000001;
   }
 }
