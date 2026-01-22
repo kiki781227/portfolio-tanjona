@@ -183,21 +183,21 @@ a, button, [role="button"], input, textarea, select, label, summary {
     color: #000001;
   }
 
-  /* Input papier (SANS border => pas de grossissement) */
   .memphis-input {
     width: 100%;
-    border: 0;                 /* ✅ important */
+    border: 0;
     border-radius: 14px;
     background: #ffffff;
     color: #000001;
-
-    /* ⚠️ ajuste ces paddings pour matcher ton field-input */
     padding: 12px 14px;
 
-    /* 1er shadow = bordure visuelle, 2e = shadow Memphis */
+    
     box-shadow: 0 0 0 3px #000001, 6px 6px 0 #000001;
 
     outline: none;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .memphis-input::placeholder {
@@ -209,9 +209,8 @@ a, button, [role="button"], input, textarea, select, label, summary {
     box-shadow: 0 0 0 3px #000001, 4px 4px 0 #000001;
   }
 
-  /* Bouton Memphis (SANS border => pas de grossissement) */
   .memphis-btn {
-    border: 0;                 /* ✅ important */
+    border: 0; 
     border-radius: 14px;
 
     box-shadow: 0 0 0 3px #000001, 8px 8px 0 #000001;
@@ -221,6 +220,10 @@ a, button, [role="button"], input, textarea, select, label, summary {
     font-weight: 800;
     letter-spacing: 0.02em;
     transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .memphis-btn:active {
