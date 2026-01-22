@@ -33,14 +33,18 @@ const HeroText = ({ start = false }) => {
           >
             Technicien/Desinateur <br /> pour des projets
           </motion.p>
-
           <motion.div
             variants={variants}
             initial="hidden"
             animate={start ? "visible" : "hidden"}
             transition={{ delay: 1.2 }}
+            translate="no"
+            className="notranslate"
           >
-            <FlipWords words={words} className="font-black text-black text-8xl [transform:translateZ(0)] [-webkit-font-smoothing:antialiased]" />
+            <FlipWords
+              words={words}
+              className="font-sans font-black text-black text-8xl"
+            />
           </motion.div>
 
           <motion.p
