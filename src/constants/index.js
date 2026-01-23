@@ -56,7 +56,7 @@ export const myProjects = [
     subDescription: [
       "Le bâtiment s’organise sur trois niveaux : espace de vie, espace nuit et toiture-terrasse partiellement couverte. Le projet porte sur l’extension d’une construction existante inachevée, conçue en cohérence avec l’existant et les objectifs du client. J’ai assuré la conception architecturale, les plans et la modélisation 3D complète sous ArchiCAD.",
     ],
-    href: "",
+    href: "https://github.com/tanjona-01/R-3-sise-Itaosy-Ambavahaditokana-102-Antananarivo",
     logo: "",
     image: "/assets/projects/projet3.jpg",
     tags: [
@@ -82,7 +82,7 @@ export const myProjects = [
       "- Travail axé sur la clarté des formes, la lisibilité des espaces et la cohérence globale du projet.",
       "- Modélisation conçue comme un outil de communication technique, destinée à faciliter les échanges avec les maçons et à assurer une compréhension commune des intentions architecturales et des dispositions générales du bâtiment.",
     ],
-    href: "",
+    href: "https://github.com/tanjona-01/Projet-personnel",
     logo: "",
     image: "/assets/projects/projet4.png",
     tags: [
